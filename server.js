@@ -26,4 +26,24 @@ app.post("/users", async (req, res) => {
     res.status(500).send();
   }
 });
+
+app.post("/users/login", async (req, res) => {
+  //check if the user exists ?
+
+  const user = users.find((user) => (user.name = req.body.name));
+
+  if (user == null) {
+    return res.status(400).send(" cannot find user ");
+  }
+
+  try {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      res.send("Success");
+    } else {
+      res.send("NO nono nonono ");
+    }
+  } catch {
+    return res.status(500).send();
+  }
+});
 app.listen(3000);
