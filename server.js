@@ -30,8 +30,9 @@ app.post("/users", async (req, res) => {
 app.post("/users/login", async (req, res) => {
   //check if the user exists ?
 
-  const user = users.find((user) => (user.name = req.body.name));
+  var user = users.find(({ name }) => name == req.body.name);
 
+  console.log(user);
   if (user == null) {
     return res.status(400).send(" cannot find user ");
   }
@@ -46,4 +47,5 @@ app.post("/users/login", async (req, res) => {
     return res.status(500).send();
   }
 });
+
 app.listen(3000);

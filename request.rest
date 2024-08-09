@@ -5,16 +5,15 @@
 # Content-Type: application/json
 
 # {
-#     "name":"harshhh" , 
+#     "name":"harshhh", 
 #     "password":"abcd123"
 
 # }
 
 POST http://localhost:3000/users/login
-
 Content-Type: application/json
 
 {
-    "name":"harshhh" , 
+    "name":"harshhh", 
     "password":"abcd123"
 }
