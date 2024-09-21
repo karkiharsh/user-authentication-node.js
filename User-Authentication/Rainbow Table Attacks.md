@@ -40,3 +40,8 @@ If not found on first try  . The message that is to be checked is reduced till t
 
 reducing functions  are many to one ... but if your hash matches you can regenerate the chain and see for the corresponding password . 
 
+
+##### I am confused about the idea of openly storing salts. 
+
+
+
